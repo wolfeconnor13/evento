@@ -40,3 +40,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Images from other domains must be specified in next.config.js
 
 Self explanatory, we need to allow images from other domains in the config file.
+
+## Tailwind notes
+
+Some general notes about tailwind:
+
+### Tailwind is mobile first
+
+When giving padding and spacing, the first argument without media width/height is designed for mobile. Then you can adjust for bigger screens with md:, sm:, etc.
