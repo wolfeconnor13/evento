@@ -37,6 +37,15 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 # Project Takeaways
 
+## NextJS hooks
+
+useRouter() - "next/navigation", gives us an instance of the router.
+
+## Other packages used
+
+clsx - Can specify conditional styling for html elements easily
+framer-motion -
+
 ## Images from other domains must be specified in next.config.js
 
 Self explanatory, we need to allow images from other domains in the config file.
