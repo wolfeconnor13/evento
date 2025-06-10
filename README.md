@@ -44,7 +44,21 @@ useRouter() - "next/navigation", gives us an instance of the router.
 ## Other packages used
 
 clsx - Can specify conditional styling for html elements easily
-framer-motion -
+framer-motion - Can give divs motion prefixes and then easily animate between them
+tailwind-merge - Override later class options in tailwind.
+
+## Getting page slugs on a server component
+
+How can we get the slug of a page on a server component? usePathname() will turn our entire component into a client component, so we can't use that. Instead NextJS gives us the ability to grab them from the {params} parameter.
+
+## Fetching data on server components
+
+Before in base React when we wanted to get data we had to use the React hook useEffect(). Now that we are working with NextJS we can grab the data directly in a server component. We just have to make the server component async and then we can use fetch directly.
+
+Benefits:
+Server is close to the database, better performance.
+Reduces client bundle. Less javascript shipped to the client.
+We can have secret api keys in the server component.
 
 ## Images from other domains must be specified in next.config.js
 
