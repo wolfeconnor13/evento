@@ -49,6 +49,7 @@ tailwind-merge - Override later class options in tailwind.
 prisma - interact with SQLite. npm install prisma@5.6.0 --save-dev sqlite
 --(only a dev dependency. specify DB type)
 --npx prisma studio to view db.
+zod - validation.
 
 ## Getting page slugs on a server component
 
@@ -91,3 +92,7 @@ Prisma is a tool used in this project to setup our database, define what data go
 Prisma recommends instantiating the PrismaClient only once. In this project we've done that in lib/db.ts
 
 Then we can import that client and call the table we want with prisma.{table}.findMany() or .findUnique(). Both require an object to be passed with where : {} which is basically like our query.
+
+## Zod
+
+We can validate incoming data to the app with zod. Create a schema for the data with varSchema = z.coerce.{optionlist}. Then when you're setting the variable that you want to check the schema against you can call varSchema.safeParse() or just parse(). Safe parse returns a result even if it fails, parse throws an error.
