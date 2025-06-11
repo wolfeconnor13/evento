@@ -46,6 +46,9 @@ useRouter() - "next/navigation", gives us an instance of the router.
 clsx - Can specify conditional styling for html elements easily
 framer-motion - Can give divs motion prefixes and then easily animate between them
 tailwind-merge - Override later class options in tailwind.
+prisma - interact with SQLite. npm install prisma@5.6.0 --save-dev sqlite
+--(only a dev dependency. specify DB type)
+--npx prisma studio to view db.
 
 ## Getting page slugs on a server component
 
@@ -71,3 +74,20 @@ Some general notes about tailwind:
 ### Tailwind is mobile first
 
 When giving padding and spacing, the first argument without media width/height is designed for mobile. Then you can adjust for bigger screens with md:, sm:, etc.
+
+## Prisma
+
+Prisma is a tool used in this project to setup our database, define what data goes in the database, and also view the database.
+
+1. Install prisma with npm install prisma
+2. Define the model for our data in schema.prisma
+3. Create a seed.ts file that will seed our data
+4. Install ts-node to execute the file that will seed our data
+5. Optionally add a package.json script that will execute tell ts-node to execute our seed.ts file
+6. View data with npx prisma studio
+
+## Grabbing data from Prisma
+
+Prisma recommends instantiating the PrismaClient only once. In this project we've done that in lib/db.ts
+
+Then we can import that client and call the table we want with prisma.{table}.findMany() or .findUnique(). Both require an object to be passed with where : {} which is basically like our query.
