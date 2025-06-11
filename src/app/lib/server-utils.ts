@@ -1,7 +1,7 @@
 import "server-only";
 
 import { unstable_cache } from "next/cache";
-import prisma from "./db";
+import prisma from "@/lib/db";
 import { notFound } from "next/navigation";
 
 export const getEvents = unstable_cache(async (city: string, page = 1) => {

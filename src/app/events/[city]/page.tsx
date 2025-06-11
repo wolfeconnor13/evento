@@ -1,6 +1,6 @@
 import EventsList from "@/components/events-list";
 import H1 from "@/components/h1";
-import Loading from "./loading";
+import Loading from "@/events/[city]/loading";
 import { Suspense } from "react";
 import { Metadata } from "next";
 import { z } from "zod";
