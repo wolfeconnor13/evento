@@ -1,5 +1,5 @@
 import H1 from "@/components/h1";
-import { EventoEvent } from "@prisma/client";
+import { EventoEvent } from "../../generated/prisma";
 import { getEvent } from "@/lib/server-utils";
 import { Metadata } from "next";
 import Image from "next/image";
