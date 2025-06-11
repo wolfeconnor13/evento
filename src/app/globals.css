@@ -4,6 +4,10 @@
 
 /* SCROLLBAR STYLING */
 /* Chrome, Edge, and Safari */
+.state-effects {
+  @apply hover:scale-105 active:scale-[1.02] transition focus:scale-105;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
