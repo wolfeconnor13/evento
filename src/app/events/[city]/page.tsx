@@ -4,6 +4,7 @@ import Loading from "./loading";
 import { Suspense } from "react";
 import { Metadata } from "next";
 import { z } from "zod";
+import { siteUrl } from "@/lib/constants";
 
 type Props = {
   params: {
@@ -53,5 +54,8 @@ export function generateMetadata({ params }: Props): Metadata {
 
   return {
     title: `Events in ${city.charAt(0).toUpperCase() + city.slice(1)}`,
+    alternates: {
+      canonical: `${siteUrl}/events/${city}`,
+    },
   };
 }

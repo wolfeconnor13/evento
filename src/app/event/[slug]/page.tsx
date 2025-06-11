@@ -1,9 +1,10 @@
 import H1 from "@/components/h1";
 import { EventoEvent } from "@prisma/client";
-import { getEvent } from "@/lib/utils";
+import { getEvent } from "@/lib/server-utils";
 import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
+import { siteUrl } from "@/lib/constants";
 
 type Props = {
   params: {
@@ -15,7 +16,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const event: EventoEvent = await getEvent(params.slug);
   return {
     title: event.name,
+    alternates: {
+      canonical: `${siteUrl}/event/${params.slug}`,
+    },
   };
+}
+
+export async function generateStaticParams() {
+  return [
+    {
+      slug: "science-space-expo",
+    },
+    {
+      slug: "dj-practice-session",
+    },
+  ];
 }
 
 export default async function EventPage({ params }: Props) {
