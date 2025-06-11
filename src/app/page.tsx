@@ -17,8 +17,18 @@ export default function Home() {
       <section className="mt-4 flex gap-x-4 text-sm text-white/50">
         <p>Popular:</p>
         <div className="space-x-2 font-semibold">
-          <Link href="/events/austin">Austin</Link>
-          <Link href="/events/seattle">Seattle</Link>
+          <Link
+            href="/events/austin"
+            className="hover:border-b-2 border-accent transition duration-1000"
+          >
+            Austin
+          </Link>
+          <Link
+            href="/events/seattle"
+            className="hover:border-b-2 border-accent transition duration-1000"
+          >
+            Seattle
+          </Link>
         </div>
       </section>
     </main>
